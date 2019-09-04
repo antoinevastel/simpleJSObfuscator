@@ -1,0 +1,35 @@
+{
+  "name": "anti_debug_fp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive test",
+    "build": "./node_modules/gulp/bin/gulp.js build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-jasmine": "^4.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-terser": "^1.2.0",
+    "mocha": "^6.1.4",
+    "puppeteer": "^1.18.1",
+    "terser": "^4.0.2"
+  },
+  "dependencies": {
+    "shift-ast": "^6.0.0",
+    "shift-parser": "^7.0.0",
+    "shift-query": "^1.0.0",
+    "shift-refactor": "^0.1.0"
+  }
+}
