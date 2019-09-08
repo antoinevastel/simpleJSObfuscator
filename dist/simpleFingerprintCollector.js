@@ -1,7 +1,7 @@
 class SimpleFingerprintCollector {
     constructor() {
         this.tests = [];
-        this.fingerprint = {}
+        this.fingerprint = {};
     }
 
     registerTest(name, test) {

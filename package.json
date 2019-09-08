@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive test",
-    "build": "./node_modules/gulp/bin/gulp.js build"
+    "build": "./node_modules/gulp/bin/gulp.js build",
+    "build2": "./node_modules/gulp/bin/gulp.js build2"
   },
   "author": "",
   "license": "ISC",

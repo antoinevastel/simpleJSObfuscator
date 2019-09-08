@@ -1,6 +1,7 @@
 const {series, src, dest } = require('gulp');
 const concat = require('gulp-concat');
 const obfuscator = require('./src/obfuscator.js');
+const obfuscator2 = require('./src/obfuscator_v2.js');
 const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 
@@ -38,8 +39,13 @@ function compress () {
         .pipe(dest('dist/'))
 }
 
+function obfuscateFPScript2(done) {
+    obfuscator2.obfuscate('./dist/simpleFingerprintCollector.js', './dist/obfuscated.js');
+    done();
+}
 
 exports.concat = concatScripts;
 exports.compress = compress;
 exports.obfuscate = obfuscateFPScript;
 exports.build = series(concatScripts, obfuscateFPScript, compress);
+exports.build2 = series(concatScripts, obfuscateFPScript2, compress);
