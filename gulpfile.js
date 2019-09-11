@@ -40,7 +40,14 @@ function compress () {
 }
 
 function obfuscateFPScript2(done) {
-    obfuscator2.obfuscate('./dist/simpleFingerprintCollector.js', './dist/obfuscated.js');
+    const transformationsConfig = {
+        frequency: {
+            'encoding': 0.7,
+            'ternary':  0.3
+        },
+        maxSplits: 4
+    };
+    obfuscator2.obfuscate('./dist/simpleFingerprintCollector.js', './dist/obfuscated.js', transformationsConfig);
     done();
 }
 

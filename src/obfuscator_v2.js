@@ -58,7 +58,7 @@ function generateRandomString(length) {
     return result.join('');
 }
 
-function obfuscateFPScript(src, dest) {
+function obfuscateFPScript(src, dest, transformationsConfig) {
     const fileContents = fs.readFileSync(src, 'utf8');
     const tree = parseScript(fileContents);
     const refactor = new RefactorSession(tree);
@@ -85,13 +85,6 @@ function obfuscateFPScript(src, dest) {
         .split(''))
         .join('');
 
-    const transformationsConfig = {
-        frequency: {
-            'encoding': 0.7,
-            'ternary':  0.3
-        },
-        maxSplits: 4
-    };
 
     const stringsProgram = Array.from(new Set(refactor.query('LiteralStringExpression').map(v => v.value)));
     const numbersProgram = Array.from(new Set(refactor.query('LiteralNumericExpression').map(v => v.value)));
